@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Booking</title>
+</head>
+<body>
+    <header>
+        <h1 class="header-title">property booking</h1>
+    </header>
+    <main class="init">
+        <section class="map">
+            <div class="map-pins-container">
+                <div class="map-pins">
+                    <div class="map-pins-overlay">
+                        <h2>NY Property</h2>
+                    </div>
+                    <div class="map-pins-main">
+                        <div class="map-pin" draggable="true">
+                            <img src="images/icon-home.svg" alt="">
+                            <!-- <span>Drag Me</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-filters-container">
+                <div class="container">
+                    <form action="#" class="map-filters">
+                        <div class="map-filter">
+                            <select name="housing-type" class="filter-select housing-type">
+                                <option value="any" selected>Any type</option>
+                                <option value="appartment">Appartment</option>
+                                <option value="house">House</option>
+                                <option value="bungalo">Bungalo</option>         
+                            </select>
+                        </div>
+                        <div class="map-filter">
+                            <select name="housing-price" class="filter-select housing-price">
+                                <option value="any" selected>Any price</option>
+                                <option value="middle">1000 - 3000$</option>
+                                <option value="low">Below 1000$ </option>
+                                <option value="high">Above 3000$</option>
+                            </select>
+                        </div>
+                        <div class="map-filter">
+                            <select name="housing-rooms" class="filter-select housing-rooms">
+                                <option value="any" selected>Any rooms</option>
+                                <option value="1room">1 room</option>
+                                <option value="2room">2 rooms</option>
+                                <option value="3room">3 rooms</option>
+                            </select>
+                        </div>
+                        <div class="map-filter">
+                            <select name="housing-guests" class="filter-select housing-guests">
+                                <option value="any" selected>Guests number</option>
+                                <option value="1guest">1 guest</option>
+                                <option value="2guest">2 guests</option>
+                                <option value="3guest">3 guests</option>
+                            </select>
+                        </div>
+                        <div class="map-filter">
+                            <fieldset class="housing-features">
+                                <label class="filter-label">
+                                    <input type="checkbox" name="wifi" value="wifi" class="filter-checkbox filter-item filter-wifi">
+                                    <img src="images/wifi.svg" alt="" class="filter-fake-elem">     
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="dish" value="dish" class="filter-checkbox filter-item filter-dishwasher">
+                                    <img src="images/dish.svg" alt="" class="filter-fake-elem">     
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="parking" value="parking" class="filter-checkbox filter-item filter-parking">
+                                    <img src="images/parking.svg" alt="" class="filter-fake-elem">  
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="wash" value="wash" class="filter-checkbox filter-item filter-washer">
+                                    <img src="images/wash.svg" alt="" class="filter-fake-elem">   
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="elevator" value="elevator" class="filter-checkbox filter-item filter-elevator">
+                                    <img src="images/elevator.svg" alt="" class="filter-fake-elem">        
+                                </label>
+                                <label class="filter-label">
+                                    <input type="checkbox" name="ac" value="ac" class="filter-checkbox filter-item filter-conditioner">
+                                    <img src="images/ac.svg" alt="" class="filter-fake-elem">      
+                                </label>
+                            </fieldset>
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </section>
+        <section class="notice">
+            <div class="container">
+                <h2 class="notice-title"> Property Info</h2>
+                <form class="notice-form">
+                    <fieldset class="notice-header">
+                        <legend>Your photo (for map)</legend>
+                        <div class="notice-photo">
+                            <div class="upload">
+                                <div class="notice-preview">
+                                    <img src="images/icon-avatar.svg" alt="" class="user-pic">
+                                </div>
+                                <label class="drop-zone">Insert your photo here
+                                    <input type="file" accept="image/jpg,image/jpeg,image/png,image/gif,image/svg" class="avatar" name="user-photo">
+                                </label>
+                                <p class="notice-info">
+                                    Fill in all <span>required fields,</span> set a price, upload photos.<br>
+                                    <span>Come up with an interesting description.</span> It will make the ad more lively and attractive.<br>
+                                    The resulting ad should give guests a <span>complete picture of your accommodation.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-row">
+                        <fieldset class="form-element form-element-wide">
+                            <label class="form-elem-title">Post descriction
+                                <input type="text" placeholder="Write down post description. Min 10 letters" class="elem-description" minlength="10" required maxlength="100" >
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element form-element-wide">
+                            <label class="form-elem-title">Address
+                                <input type="text" class="elem-address" value = "x: 695 , y: 105" readonly required>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="form-row">
+                        <fieldset class="form-element">
+                            <label class="form-elem-title">Property type
+                                <select name="type" class="elem-type">
+                                    <option value="appartment" selected>Appartment</option>
+                                    <option value="bungalo">Bungalo</option>
+                                    <option value="house">House</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element">
+                            <label class="form-elem-title">Price
+                                <input type="number" class="elem-price" placeholder="300 $" max="1000000" required  min="300">
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element">
+                            <label class="form-elem-title">Check in
+                                <select name="type" class="elem-check-in">
+                                    <option value="12:00" selected>After 12:00 pm</option>
+                                    <option value="13:00">After 13:00 pm</option>
+                                    <option value="14:00">After 14:00 pm</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element">
+                            <label class="form-elem-title">Check out
+                                <select name="type" class="elem-check-out">
+                                    <option value="12:00" selected>Before 12:00 pm</option>
+                                    <option value="13:00">Before 13:00 pm</option>
+                                    <option value="14:00">Before 14:00 pm</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="form-row">
+                        <fieldset class="form-element">
+                            <label class="form-elem-title">Rooms
+                                <select name="type" class="elem-rooms">
+                                    <option value="1" selected>1 room</option>
+                                    <option value="2">2 rooms</option>
+                                    <option value="3">3 rooms</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element">
+                            <label class="form-elem-title">Guests
+                                <select name="type" class="elem-guests">
+                                    <option value="1" selected>1 guest</option>
+                                    <option value="2">2 guests</option>
+                                    <option value="3" disabled="disabled">3 guests</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element form-element-wide">
+                            <legend>Facilities: Wi-fi, Dishwashing, Parking, Washing Machine, Elevator, A/C</legend>
+                            <label class="feature-label">
+                                <input type="checkbox" name="features" value="wifi" class="feature-item feature-wifi">
+                                <img src="images/wifi.svg" alt="" class="filter-fake-elem">
+                            </label>
+                            <label class="feature-label">
+                                <input type="checkbox" name="features" value="dish" class="feature-item feature-dish">
+                                <img src="images/dish.svg" alt="" class="filter-fake-elem">
+                            </label>
+                            <label class="feature-label">
+                                <input type="checkbox" name="features" value="parking" class="feature-item feature-parking">
+                                <img src="images/parking.svg" alt="" class="filter-fake-elem">
+                            </label>
+                            <label class="feature-label">
+                                <input type="checkbox" name="features" value="wash" class="feature-item feature-wash">
+                                <img src="images/wash.svg" alt="" class="filter-fake-elem">
+                            </label>
+                            <label class="feature-label">
+                                <input type="checkbox" name="features" value="elevator" class="feature-item feature-elevator">
+                                <img src="images/elevator.svg" alt="" class="filter-fake-elem">
+                            </label>
+                            <label class="feature-label">
+                                <input type="checkbox" name="features" value="ac" class="feature-item feature-ac">
+                                <img src="images/ac.svg" alt="" class="filter-fake-elem">
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="form-row">
+                        <fieldset class="form-element form-element-wide">
+                            <label class="form-elem-title">Property description (optional)
+                                <textarea class="feature-item-description" name="description" placeholder="Add some property description" ></textarea>
+                            </label>
+                        </fieldset>
+                        <fieldset class="form-element form-element-wide form-photos">
+                            <span class="form-elem-title">Property photos</span>
+                            <label>
+                                <input type="file" accept="image/jpg,image/jpeg,image/png,image/gif,image/svg" class="elem-photo">
+                                <span class="elem-photo-fake">Insert your phots here</span>
+                            </label><br>
+                        </fieldset>
+                    </div>
+                    <div class="form-row">
+                        <fieldset class="form-element ">
+                            <button class="form-submit" type="submit">Create Post</button>
+                            <button class="form-reset" type="reset">Clear-Inputs</button>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>     
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="copyright">	&copy; Copyright</div>
+    </footer>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/property.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
